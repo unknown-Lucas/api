@@ -16,7 +16,7 @@ class Server {
         this.app.set('port', process.env.PORT || 3000)
 
         this.app.use(express.json()) // para que nuestro servidor entienda
-        // los formatos json desde clientes
+        this.app.use(cors())
         this.app.use(morgan('dev'))  // Para que muestre las url invocadas
 
         this.app.use((req, res, next) => {
